@@ -1,4 +1,4 @@
-
+    
 /**
  * This class represents a simple picture. You can draw the picture using
  * the draw method. But wait, there's more: being an electronic picture, it
@@ -12,17 +12,28 @@
  */
 public class Picture
 {
-    private Square wall;
+    private Square wall1;
+    private Square wall2;
+    private Square wall3;
+    private Square wall4;
     private Square window;
-    private Triangle roof;
-    private Circle sun;
-
+    private Circle windowArch;
+    private Square hedge;
+    private Square creek;
+    private Triangle roof1;
+    private Triangle roof2;
+    private Triangle roof3;
+    private Circle sun1;
+    private Circle sun2;
+    private Circle sun3;
+    private Circle lake;
+    
     /**
      * Constructor for objects of class Picture
      */
     public Picture()
     {
-        // nothing to do... instance variables are automatically set to null
+        this.draw(); 
     }
 
     /**
@@ -30,57 +41,103 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveVertical(80);
-        wall.changeSize(100);
-        wall.makeVisible();
+        sun1 = new Circle();
+        sun1.changeColor("yellow");
+        sun1.moveVertical(-30);
+        sun1.changeSize(60);
+        sun1.makeVisible();
+        
+        sun2 = new Circle();
+        sun2.changeColor("magenta");
+        sun2.moveHorizontal(-15);
+        sun2.moveVertical(-50);
+        sun2.changeSize(60);
+        sun2.makeVisible();
+        
+        sun3 = new Circle();
+        sun3.changeColor("red");
+        sun3.moveHorizontal(-30);
+        sun3.moveVertical(-70);
+        sun3.changeSize(60);
+        sun3.makeVisible();
 
+        hedge = new Square();
+        hedge.changeColor("green");
+        hedge.changeSize(300);
+        hedge.moveHorizontal(-30);
+        hedge.moveVertical(40);
+        hedge.makeVisible();
+        
+        creek = new Square();
+        creek.changeColor("blue");
+        creek.changeSize(300);
+        creek.moveHorizontal(-30);
+        creek.moveVertical(130);
+        creek.makeVisible();
+        
+        lake = new Circle();
+        lake.changeColor("blue");
+        lake.changeSize(250);
+        lake.moveHorizontal(-105);
+        lake.moveVertical(140);
+        lake.makeVisible();
+        
+        wall1 = new Square();
+        wall1.changeSize(60);
+        wall1.makeVisible();
+        
+        
+        wall2 = new Square();
+        wall2.changeSize(60);
+        wall2.moveHorizontal(40);
+        wall2.makeVisible();
+        
+        wall3 = new Square();
+        wall3.changeSize(60);
+        wall3.moveHorizontal(200);
+        wall3.makeVisible();
+
+        wall4 = new Square();
+        wall4.changeSize(100);
+        wall4.moveHorizontal(100);
+        wall4.moveUp();
+        wall4.makeVisible();
+        
+        roof1 = new Triangle();
+        roof1.changeSize(30, 60);
+        roof1.moveHorizontal(60);
+        roof1.moveVertical(90);
+        roof1.makeVisible();
+        
+        roof2 = new Triangle();
+        roof2.changeSize(60, 120);
+        roof2.moveHorizontal(230);
+        roof2.moveVertical(60);
+        roof2.makeVisible();
+
+        roof3 = new Triangle();
+        roof3.changeSize(100, 130);
+        roof3.moveHorizontal(140);
+        roof3.moveVertical(30);
+        roof3.makeVisible();   
+        
         window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(20);
-        window.moveVertical(100);
+        window.changeColor("white");
+        window.changeSize(30);
+        window.moveHorizontal(95);
+        window.moveVertical(-30);
         window.makeVisible();
-
-        roof = new Triangle();
-        roof.changeSize(50, 140);
-        roof.moveHorizontal(60);
-        roof.moveVertical(70);
-        roof.makeVisible();
-
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(180);
-        sun.moveVertical(-10);
-        sun.changeSize(60);
-        sun.makeVisible();
+        
+        windowArch = new Circle();
+        windowArch.changeColor("white");
+        windowArch.changeSize(30);
+        windowArch.moveHorizontal(105);
+        windowArch.moveVertical(15);
+        windowArch.makeVisible();
+        
+        
     }
 
-    /**
-     * Change this picture to black/white display
-     */
-    public void setBlackAndWhite()
-    {
-        if(wall != null)   // only if it's painted already...
-        {
-            wall.changeColor("black");
-            window.changeColor("white");
-            roof.changeColor("black");
-            sun.changeColor("black");
-        }
-    }
 
-    /**
-     * Change this picture to use color display
-     */
-    public void setColor()
-    {
-        if(wall != null)   // only if it's painted already...
-        {
-            wall.changeColor("red");
-            window.changeColor("black");
-            roof.changeColor("green");
-            sun.changeColor("yellow");
-        }
-    }
 
 }
