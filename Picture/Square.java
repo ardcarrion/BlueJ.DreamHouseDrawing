@@ -20,11 +20,11 @@ public class Square
      */
     public Square()
     {
-        size = 30;
-        xPosition = 60;
-        yPosition = 50;
-        color = "red";
-        isVisible = false;
+        size = 40;
+        xPosition = 30;
+        yPosition = 120;
+        color = "black";
+        isVisible = true;
     }
 
     /**
